@@ -1,6 +1,9 @@
 db.sqlite3
 geckodriver.log
 virtualenv
+virtualen/
+env
+env/
 .vscode
 __pycache__
 *.pyc
