@@ -23,6 +23,10 @@ eg, on Ubuntu:
 
 * see gunicorn-systemd.template.service
 * replace DOMAIN with, e.g. staging.my-domain.com
+* Systemd logs: sudo journalctl -u gunicorn-superlists-staging.ottg.eu.
+* systemd-analyze verify /path/to/my.service
+* sudo systemctl daemon-reload
+* sudo systemctl start gunicorn-my-domain.com
 
 ## Folder structure:
 
