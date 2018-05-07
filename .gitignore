@@ -4,6 +4,7 @@ virtualenv
 virtualen/
 env
 env/
+.env
 .vscode
 __pycache__
 *.pyc
