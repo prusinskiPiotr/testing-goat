@@ -43,5 +43,5 @@ def _update_static_files():
     run('./env/bin/python manage.py collectstatic --noinput')
 
 
-def _database():
+def _update_database():
     run('./env/bin/python manage.py migrate --noinput')
