@@ -5,6 +5,11 @@ from lists.models import List, Item
 
 class ItemFormTest(TestCase):
 
+    def test_form_item_input_has_placeholder_and_css_classes(self):
+        form = ItemForm()
+        self.assertIn('placeholder="Enter a to-do item"', form.as_p())
+        self.assertIn('class="form-control input-lg"', form.as_p())
+
     def test_form_renders_id_text_input(self):
         form = ItemForm(data={'text':''})
         self.assertFalse(form.is_valid())
@@ -38,3 +43,9 @@ class ExistingListItemFormTest(TestCase):
         form = ExistingListItemForm(for_list=list_, data={'text': 'no twins!'})
         self.assertFalse(form.is_valid())
         self.assertEqual(form.errors['text'], [DUPLICATE_ITEM_ERROR])
+
+    def test_form_save(self):
+        list_ = List.objects.create()
+        form = ExistingListItemForm(for_list=list_, data={'text': 'hi'})
+        new_item = form.save()
+        self.assertEqual(new_item, Item.objects.all()[0])
