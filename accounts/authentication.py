@@ -1,5 +1,5 @@
 import sys
-from accounts.model import ListUser, Token
+from accounts.models import ListUser, Token
 
 
 class PasswordlessAuthenticationBackend(object):
