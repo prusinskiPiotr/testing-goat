@@ -27,21 +27,21 @@
                     </form>
                 {% endif %}
             </div>
-        </nav>
-
-        {% if messages %}
+            
+            {% if messages %}
             <div class="row">
                 <div class="col-md-8">
                     {% for message in messages %}
-                        {% if messages.level_tag == 'success' %}
-                            <div class="alert alert-success">{{ message }}</div>
-                        {% else %}
-                            <div class="alert alert-danger">{{ message }}</div>
-                        {% endif %}
+                    {% if messages.level_tag == 'success' %}
+                    <div class="alert alert-success">{{ message }}</div>
+                    {% else %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
-        {% endif %}
+            {% endif %}
+        </nav>
 
         <div class="row">
             <div class="col-md-6 col-md-offset-3 jumbotron">

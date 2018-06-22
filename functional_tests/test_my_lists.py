@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.contrib.auth import BACKEND_SESSION_KEY, SESSION_KEY, get_user_model
-from django.contrib.session.backends.db import SessionStore
+from django.contrib.sessions.backends.db import SessionStore
 from .base import FunctionalTest
 User = get_user_model()
 
@@ -16,7 +16,7 @@ class MyListsTest(FunctionalTest):
         # to set a cookie we need to first visit te domain.
         # 404 pages load the quickest!
         self.browser.get(self.live_server_url + '/404/no_such_url')
-        self.browser.add_cookies(dict(
+        self.browser.add_cookie(dict(
             name=settings.SESSION_COOKIE_NAME,
             value=session.session_key,
             path='/',
